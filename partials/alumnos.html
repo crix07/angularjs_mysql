@@ -1,0 +1,33 @@
+<h1>Alumnos</h1>
+<h4>Listado de alumnos en el sistema</h4>
+<hr />
+
+<div class="row">
+    
+    <table class="table table-striped">
+
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Telefono</th>
+            <th>Ver</th>
+        </tr>
+
+        <tr ng-repeat="alumno in alumnos track by alumno.codigo">
+            <td> {{ alumno.codigo }} </td>
+            <td> {{ alumno.nombre | uppercase }} </td>
+            <td> {{ alumno.telefono | telefono }} </td>
+            <td> <a href="#!/alumno/{{ alumno.codigo }}"> Ver Registro </a> </td>
+        </tr>
+
+    </table>
+
+
+    <div class="container">
+        <div class="row" ng-show="alumnos.length > 0">
+          <div class="col-span-12">
+            <!-- <uib-pagination ng-model="currentPage" total-items="alumnos.length" max-size="maxSize" items-per-page="numPerPage" boundary-links="true"></uib-pagination> -->
+          </div>
+        </div>
+      </div>
+</div>
